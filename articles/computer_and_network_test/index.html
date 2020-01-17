@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PC Test Software and Network Test Software</title>
+  </head>
+<body>
+
+<h1>Network Test</h1>
+<h2>Speed Test</h2>
+<p>Run this for a while:</p>
+<pre>loop.sh
+
+#!/bin/bash
+while true 
+do 
+    wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip --append-output=wget-log --timeout=5
+    sleep 5
+done</pre>
+
+<p>Run this to analyze the results:</p>
+
+<pre>parse.sh
+
+grep -e 2014 -e unable wget-log | grep -v '\-\-2014'</pre>
+
+
+</body>
+</html>

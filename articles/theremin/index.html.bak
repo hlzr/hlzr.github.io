@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="Shortcut Icon" href="/favicon.ico">
+  <title>theremin</title>
+
+  <style type="text/css">
+  body 
+  {
+    font-family: "Georgia","Times New Roman",Serif;
+    color: black;
+    background: url("/images/copper_patina.jpg") black no-repeat top left;
+  }
+  div.content
+  {
+    text-align: left;
+    width: 650px;
+    min-height: 100%;
+    border-right-width: 0px;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-color: rgba(78,78,200,.4);
+    border-style: solid;
+    background-color: rgba(255,255,255,.6);
+    padding: 1em;
+    margin-bottom: 0;
+    margin-top: 20em;
+    margin-left: 8em;
+    margin-right: auto;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+  }
+  html, body 
+  {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  p
+  {
+    /*background-color: rgba(140,140,140, .7);
+    border-color: rgba(140,140,140, .7);
+    border-style: solid;
+    border-width: 8px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;*/
+    text-shadow: 0 0 0.7em #aaa, 0 0 0.7em #aaa, 0 0 0.9em #aaa, 0 0 1.2em #aaa;
+  }
+  </style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9934583-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div class="content">
+    <h1>theremin</h1>
+    <h2>introduction and brief history</h2>
+    <p>The theremin is a musical instrument that was invented by a russian physicist named Leon Theremin in 1920.  The technology used was originally intended for proximity detection, and he converted it into a musical instrument.  It gained momentum when Vladimir Lenin saw it and was impressed; this is probably why it has the notoriety it does today (at least among musicians).  The history surrounding the instrument and its inventor is fascinating (including KGB operatives dragging Theremin from the US to Siberia to work in a work camp for scientists and engineers, according to some reports); one can read more about it in the <a target="_blank" href="http://en.wikipedia.org/wiki/Theremin#History">Wikipedia article</a>.  Also, there is a documentary called <a target=_blank" href="http://www.imdb.com/title/tt0108323/">Theremin: An Electronic Odyssey</a> which has recieved much critical acclaim and features some of the pioneers of the instrument including Theremin himself, Clara Rockmore, one of the early virtuosic players, Robert Moog, a pioneer of electronic music and designer of the most popular model, among others such as Todd Rundgren.
+    </p>
+    <p>Below is a video of the inventor himself performing on the instrument to accompaniment by piano: </p>
+    <iframe width="640" height="480" src="http://www.youtube.com/embed/CcAyNHSnh14" frameborder="0" allowfullscreen></iframe>
+    <p>Below is a video of a master thereminist playing "Claire de Lune"</p>
+    <iframe width="640" height="480" src="http://www.youtube.com/embed/Xn4TgYkqdi8" frameborder="0" allowfullscreen></iframe>
+
+    <h2>functional description</h2>
+    <p>There are two antennas that protrude out of the device with which one controls the volume and the pitch of the instrument.  The antenna on the left is for volume and the antenna on the right is for pitch.  To adjust the pitch, one moves one's hand closer to the pitch antenna to increase the pitch, and further from the antenna to decrease the pitch.  The instrument is set to be silent by touching the volume antenna, and it gradually gets louder as one moves one's hand away from it.</p>
+    <h2>technical analysis (for the non-technical)</h2>
+    <p>Since it is most interesting aspect of the instrument, we will start by looking at how the theremin determines the position of your hand.  Put briefly, moving your hand close to one of the antennas increases the capacitance to ground of that antenna, which in turn sets the frequency of a resonant circuit (such as an oscillator or a filter, more on this later).  Also, it is not quite capacitance to ground; rather, it is capacitance to the voltage of your body, which is constant enough. At a higher frequencies, we don't care about the value of the voltage of the constant voltage source we are connected to so much that it is fixed; and then we perform our analysis as if that source was ground.  Another note, the antennas are not truly antennas (in that they are not sending nor recieving anything with them) but rather one plate of a capacitor (with the other plate being your hand).</p>
+    <p>Next, we will look at a block diagram of the circuit and understand how everything fits together.</p>
+</div>
+</body>
+</html>
